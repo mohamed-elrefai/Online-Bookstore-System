@@ -13,5 +13,17 @@ functions:
           path: /
           method: get
 
+      - http:
+          path: /connectDatabase
+          method: get
+      
+      - http:
+          path: /api/register
+          method: post
+
+      - http:
+          path: /api/login
+          method: post
+
 plugins:
   - serverless-plugin-typescript

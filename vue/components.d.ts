@@ -7,6 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AddMark: typeof import('./src/components/Icons/AddMark.vue')['default']
+    Book: typeof import('./src/components/Icons/Book.vue')['default']
+    DoneMark: typeof import('./src/components/Icons/DoneMark.vue')['default']
+    Menu: typeof import('./src/components/Icons/Menu.vue')['default']
     NavBar: typeof import('./src/components/Templates/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
