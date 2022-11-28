@@ -12,18 +12,22 @@ functions:
       - http:
           path: /
           method: get
+          cors: true
 
       - http:
           path: /connectDatabase
           method: get
-      
+          cors: true
+          
       - http:
           path: /api/register
           method: post
+          cors: true
 
       - http:
           path: /api/login
           method: post
+          cors: true
 
 plugins:
   - serverless-plugin-typescript
