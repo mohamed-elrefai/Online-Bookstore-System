@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     AddMark: typeof import('./src/components/Icons/AddMark.vue')['default']
     Book: typeof import('./src/components/Icons/Book.vue')['default']
     DoneMark: typeof import('./src/components/Icons/DoneMark.vue')['default']
+    HomeBody: typeof import('./src/components/Templates/HomeBody.vue')['default']
     Menu: typeof import('./src/components/Icons/Menu.vue')['default']
     NavBar: typeof import('./src/components/Templates/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

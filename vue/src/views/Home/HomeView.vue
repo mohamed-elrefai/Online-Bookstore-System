@@ -1,6 +1,6 @@
 <template>
   <div class="home">
     <NavBar />
-    kasndpk
+    <HomeBody />
   </div>
 </template>

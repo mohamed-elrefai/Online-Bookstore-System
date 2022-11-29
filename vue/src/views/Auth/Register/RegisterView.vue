@@ -23,9 +23,6 @@ export default defineComponent({
     methods: {
         async RegisterApi(e: Event){
             e.preventDefault();
-            const data = {
-                
-            }
             if(this.password.length < 6){
                 this.error = "Password must be at least 6"
             }else{
@@ -42,8 +39,7 @@ export default defineComponent({
                         country: this.address.country
                     }
                 })
-                console.log(res)
-                
+                this.$router.push('/')                
             }            
         },
     },
@@ -61,7 +57,7 @@ export default defineComponent({
             </div>
 
             <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-                <p class="text-center text-3xl">Join Us.</p>
+                <p class="text-center text-3xl">Sign Up.</p>
                 <form class="flex flex-col pt-3 md:pt-8" @submit.prevent="RegisterApi">
                     <div class="md:flex md:w-full md:justify-between">
                         <div class="flex flex-col pt-2 w-full">
@@ -106,7 +102,7 @@ export default defineComponent({
                         <div class="flex flex-col pt-2 w-full ml-1">
                             <label for="City" class="text-lg">City</label>
                             <select name="" v-model="address.city" id="" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
-                                <option value="Nono">None</option>
+                                <div value="None">None</div>
                                 <option v-for="all in allCity" :key="all.id" v-bind:value="all.governorate_name_en">{{ all.governorate_name_en }}</option>
                             </select>
                         </div>
@@ -117,11 +113,13 @@ export default defineComponent({
                         </div>
                     </div>
 
-                    <input type="submit" value="Register"
+                    <input type="submit" value="Sign Up"
                         class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8" />
                 </form>
+                <p class="text-center m-2">or</p>
+                <button class="bg-blue-500 border-black text-white font-bold text-lg hover:bg-blue-700 p-2">Google</button>
                 <div class="text-center pt-12 pb-12">
-                    <p>Already have an account? <a href="login.html" class="underline font-semibold">Log in here.</a></p>
+                    <p>Already have an account? <router-link to="/signin" class="underline font-semibold">Sign in here.</router-link></p>
                 </div>
             </div>
 
@@ -129,7 +127,7 @@ export default defineComponent({
 
         <!-- Image Section -->
         <div class="w-1/2 shadow-2xl">
-            <img class="object-cover w-full h-screen hidden md:block" src="https://source.unsplash.com/IXUM4cJynP0"
+            <img class="object-cover w-full h-full hidden md:block" src="../../../assets/1.jpg"
                 alt="Background" />
         </div>
     </div>

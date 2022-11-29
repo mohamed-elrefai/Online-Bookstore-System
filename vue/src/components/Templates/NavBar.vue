@@ -1,21 +1,18 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-    setup() {
+    setup(){
         
-    },
+    }
 })
 </script>
 
 <template>
-    <div class="  bg-lightNode-first w-full h-12 flex items-center justify-between">
+    <div class="  bg-[#101010] text-[#e8e8e8] w-full h-12 flex items-center justify-between">
         <div class=" text-xl flex justify-start ml-10 font-medium text-first_text">
             <router-link to="/">
                 <h1 class="flex">
-                    <span class="mt-[6px] mr-2">
-                        <Logo />
-                    </span>
                     EBI
                 </h1>
             </router-link>
@@ -31,11 +28,8 @@ export default defineComponent({
                 <div class="m-2">
                     <router-link to="/store">Store</router-link>
                 </div>
-                <div class="m-2 bg-lightGreen-first h-[30px] rounded-md hover:bg-Browen-first">
-                    <router-link class="p-2 m-2" to="/signin">Sign in</router-link>
-                </div>
-                <div class="m-2 bg-lightGreen-first rounded-md hover:bg-Browen-first">
-                    <router-link class="p-2 m-2" to="/signup">Sign Up</router-link>
+                <div class="m-2 bg-[#202020] rounded-md hover:bg-[#303030]">
+                    <router-link class="p-3 m-3" to="/signup">Join Us</router-link>
                 </div>
             </div>
         </div>
