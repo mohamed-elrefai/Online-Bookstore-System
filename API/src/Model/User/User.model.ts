@@ -1,6 +1,21 @@
 import { Schema, model, Document } from "mongoose";
 import UserIntrfaces from "../../InterFace/User";
 
+const AdderssSchema = new Schema({
+    streetAddress: {
+        type: String,
+        required: true,
+    },
+    city: {
+        type: String,
+        required: true,
+    },
+    country: {
+        type: String,
+        required: true,
+    },
+})
+
 const UserSchema = new Schema({
     firstName:{
         type: String,
@@ -22,9 +37,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    address:{
-        
-    },
+    address:AdderssSchema,
     phoneNumber:{
         type: String,
         required: true,
@@ -38,7 +51,7 @@ const UserSchema = new Schema({
         default: 'https://firebasestorage.googleapis.com/v0/b/animeview-60d78.appspot.com/o/user.jpeg?alt=media&token=2b11e16f-41a6-435d-afdc-f7f68615d2f7',
     },
     token:{
-        type: String,
+        type: String
     },
 },{
     timestamps: true
