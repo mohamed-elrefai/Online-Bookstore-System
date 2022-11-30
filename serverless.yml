@@ -9,6 +9,7 @@ functions:
   handler:
     handler: src/handlers.handler
     events:
+# Handle Server
       - http:
           path: /
           method: get
@@ -18,7 +19,7 @@ functions:
           path: /connectDatabase
           method: get
           cors: true
-          
+# Authentication User
       - http:
           path: /api/register
           method: post
@@ -27,6 +28,11 @@ functions:
       - http:
           path: /api/login
           method: post
+          cors: true
+# User Profile
+      - http:
+          path: /api/getuser
+          method: get
           cors: true
 
 plugins:

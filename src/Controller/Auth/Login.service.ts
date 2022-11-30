@@ -3,6 +3,7 @@ import bcrypt from 'bcryptjs'
 import UserModel from '../../Model/User/User.model';
 import { LoginDto } from '../../@Types/Auth/Login.dto';
 import TokenCookie from '../../Functions/AuthToken/AuthToken';
+import CookieEmail from '../../Functions/jwt/Cookie.jwt'
 
 export const LoginController = async (req: Request, res: Response, next: NextFunction) => {
     try{
@@ -20,6 +21,10 @@ export const LoginController = async (req: Request, res: Response, next: NextFun
         if(getEmail && getPassword){
             const token = TokenCookie(getEmail._id)
             getEmail.token = token
+
+            // Create Cookie
+            const __Set = CookieEmail(getEmail.email, getEmail.password);
+            res.cookie('__SET', __Set, {httpOnly: true, maxAge: 45* 60 * 60 * 24 * 1000})
             res.status(200).json({code: 200, statuse: 'OK',getEmail})
             next();
         }

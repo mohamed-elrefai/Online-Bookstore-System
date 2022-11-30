@@ -17,14 +17,10 @@ This project is a website that acts as a central book store. This web project is
 </p>
 
 ## Technology Used
-- Backend: 
-    - Node.js
-    - AWS Lambda
-    - Express Typescript
-
-- Frontend: 
-    - Vue.js
-    - Typescript
-    - TailwindCSS
+- Node.js
+- AWS Lambda
+- Express Typescript
+- MongoDB
+- documentation: Postman
 
 ## Read <a href="https://github.com/mohamed-elrefai/Online-Bookstore-System/blob/main/Documentation.md">Documentation</a>
