@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs'
 import UserModel from '../../Model/User/User.model';
 import { LoginDto } from '../../@Types/Auth/Login.dto';
+import TokenCookie from '../../Functions/AuthToken/AuthToken';
 
 export const LoginController = async (req: Request, res: Response, next: NextFunction) => {
     try{
@@ -17,6 +18,8 @@ export const LoginController = async (req: Request, res: Response, next: NextFun
         }
 
         if(getEmail && getPassword){
+            const token = TokenCookie(getEmail._id)
+            getEmail.token = token
             res.status(200).json({code: 200, statuse: 'OK',getEmail})
             next();
         }

@@ -2,9 +2,15 @@
 import axios from 'axios';
 import { defineComponent } from 'vue'
 import {City} from '../../../Types/City'
+import RegisterInterface from '../../../InterFaces/Auth/Register'
 
 export default defineComponent({
-    data() {
+    setup() {
+        const allCity = City
+
+        return {allCity}
+    },
+    data(): RegisterInterface {
         return {
             firstName: "",
             lastName: "",
@@ -16,7 +22,6 @@ export default defineComponent({
                 city: "",
                 country: ""
             },
-            allCity: City,
             error: ""
         }
     },
