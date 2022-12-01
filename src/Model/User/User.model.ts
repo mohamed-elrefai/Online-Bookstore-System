@@ -1,4 +1,5 @@
 import { Schema, model, Document } from "mongoose";
+import { toJSON } from "../../@Types/toJson/User.tojson";
 import UserIntrfaces from "../../InterFace/User";
 
 const AdderssSchema = new Schema({
@@ -56,6 +57,8 @@ const UserSchema = new Schema({
 },{
     timestamps: true
 });
+
+UserSchema.methods.toJSON = toJSON
 
 const UserModel = model<UserIntrfaces & Document>('User', UserSchema)
 

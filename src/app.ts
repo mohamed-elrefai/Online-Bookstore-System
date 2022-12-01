@@ -16,4 +16,7 @@ AppHook(app)
 
 AppSetup(app)
 
+app.listen(1999, () => {
+    console.log('http://localhost1999')
+})
 export default app
